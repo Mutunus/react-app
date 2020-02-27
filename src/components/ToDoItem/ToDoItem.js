@@ -2,12 +2,12 @@ import React from 'react';
 
 const ToDoItem = (props) => 
 <li key={props.id}>
-    <label htmlFor={props.id}>{props.name}</label><br/>
+    <label htmlFor={props.id}>{props.title}</label><br/>
     <input 
-        onChange={() => console.log('eat cock')} 
         checked={props.complete} 
         id={props.id} 
         type="checkbox"
+        onChange={() => props.onChange(props.id)}
     />
 </li>
 

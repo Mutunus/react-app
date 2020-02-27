@@ -11,7 +11,7 @@ class UserForm extends React.Component {
     }
   
     handleInputChange = (event) => {
-        const target = event.target;
+        const { target } = event
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
     
@@ -22,6 +22,7 @@ class UserForm extends React.Component {
   
     handleSubmit = (event) => {
       event.preventDefault();
+      this.props.onSubmit(this.state)
     }
   
     render() {
@@ -35,7 +36,7 @@ class UserForm extends React.Component {
             Is Awesome:
             <input type="checkbox" name="isAwesome" checked={this.state.isAwesome} onChange={this.handleInputChange} />
           </label>
-          <input type="submit" value="Submit" />
+          <button>Submit</button>
         </form>
       );
     }

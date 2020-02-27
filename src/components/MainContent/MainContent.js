@@ -16,11 +16,15 @@ class MainContent extends React.Component {
         this.setState({ todos: await res.json() })
       }
 
+    onFormSubmit(formVals) {
+        console.log(formVals)
+    }
+
     render() {
         const todoItems = this.state.todos.map(todo => <ToDoItem onChange={this.handleClick} key={todo.id} id={todo.id} title={todo.title} complete={todo.completed}/>)
         return (
             <div>
-                <UserForm/>
+                <UserForm onSubmit={this.onFormSubmit} />
                 <div onClick={this.handleClick}>
                     <ul>
                         {todoItems}

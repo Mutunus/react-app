@@ -26,3 +26,4 @@ export default App;
 // USEFUL LINKS 
 
 // SUPPORTED EVENTS https://reactjs.org/docs/events.html#supported-events
+// FORMS https://reactjs.org/docs/forms.html

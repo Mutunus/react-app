@@ -1,6 +1,7 @@
 import React from 'react';
 import './MainContent.css'
 import ToDoItem from './../ToDoItem/ToDoItem.js'
+import UserForm from './../UserForm/UserForm.js'
 
 class MainContent extends React.Component {
     constructor() {
@@ -18,10 +19,13 @@ class MainContent extends React.Component {
     render() {
         const todoItems = this.state.todos.map(todo => <ToDoItem onChange={this.handleClick} key={todo.id} id={todo.id} title={todo.title} complete={todo.completed}/>)
         return (
-            <div onClick={this.handleClick}>
-                <ul>
-                    {todoItems}
-                </ul>
+            <div>
+                <UserForm/>
+                <div onClick={this.handleClick}>
+                    <ul>
+                        {todoItems}
+                    </ul>
+                </div>
             </div>
         )
     }
